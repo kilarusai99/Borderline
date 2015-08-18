@@ -3,3 +3,51 @@
     padding: 0;
     border: 0;
 }
+[data-role=page]{
+    height: 100% !important;
+    position:relative !important;
+}
+[data-role=footer]{
+    bottom:0; 
+    position:absolute !important; 
+    top: auto !important; 
+    width:100%;
+} 
+header a img{
+    height: 15px; 
+}
+header{
+    border: none!important;
+    background-color: white;
+}
+footer{
+    border: 1px solid #e0e0e0;
+    background-color: white;
+}
+#main{
+    background-color: #EEEEEE;
+}
+.grades{
+    float: right;
+    padding: 15px;
+}
+.course{
+    padding: 15px;
+}
+#menuMenu{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+.empty{
+    margin: 25%;
+}
+.empty i{
+    padding: 0 25%;
+}
+.card{
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}

@@ -4,91 +4,166 @@
         <title>Borderline</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+
+
+        <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">     
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/materialize.min.css">
         <link rel="stylesheet" href="css/style.css">
-        
+
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
-        
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
     </head>
     <body>
         <div data-role="page" id="main">
-            <header data-role="header">
+            <header data-role="header" class="z-depth-2">
+                <a id="menuButton"><img src="img/menu.png"></a>
+                <div class="collection" id="menuMenu">
+                    <a href="#settings" class="collection-item">Settings</a>
+                    <a href="#" class="collection-item">Edit Courses</a>
+                </div>
                 <h1>Borderline</h1>
             </header>
-            <section data-role="content">
-                <a href="#settings"><p>Settings</p></a>
-                <a href="#newCourse"><p>New Course</p></a>
-                <a href="#newGrade"><button id="newGradeButton">New Grade</button></a>
-                
+            <section data-role="content" id="mainContent">
                 <div id="userCourses">
-                
+
                 </div>
-                <button id="clearAll">Clear All</button>
+                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large red">
+                        <i class="large material-icons z-depth-2">add</i>
+                    </a>
+                    <ul>
+                        <li><a href="#newCourse" class="btn-floating red"><i class="material-icons">library_add</i></i></a></li>
+                        <li><a href="#newGrade" class="btn-floating yellow darken-1"><i id="newGradeButton" class="material-icons">assignment</i></a></li>
+                    </ul>
+                </div>
             </section>
-            <footer data-role="footer">
-                
+            <footer data-role="footer" class="page-footer white">
+
             </footer>
         </div>
-        
+
         <div data-role="page" id="settings">
-            <header data-role="header">
+            <header data-role="header" class="z-depth-2">
+
+                <a id="back" href="#main"><img src="img/back.png"></a>
                 <h1>Settings</h1>
             </header>
             <section data-role="content">
-                <form id="configureSettings">
-                    <p>Tests comprise</p><input type="number" step="0.1" name="testVal" value="75">
-                    <p>Quizzes comprise</p><input type="number" step="0.1" name="quizVal" value="25">
-                    <br>
-                    <p>Show Minimum Grades for</p>
-                    <select id="typeOfGrades">
-                        <option value="nextHighest">Next Highest Letter Grades</option>
-                        <option value="maintain">Maintaining Current Grades</option>
-                        <option value="allA">All A's</option>
-                        <option value="AllB">All B's</option>
-                        <option value="AllC">All C's</option>
-                    </select>
-                    <a href="#main"><button id="settingsBack">Back</button></a>
-                </form>
+                <div class="row">
+                    <form class="col s12 m12 l12" id="configureSettings">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="number" step="0.1" name="testVal" value="75" id="testVal" placeholder="75">
+                                <label for="testVal">Tests Comprise</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input type="number" step="0.1" name="quizVal" value="25" id="quizVal" placeholder="25">
+                                <label for="quizVal">Quizzes comprise</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <select id="typeOfGrades" class="browser-default">
+                                    <option value="plsSelect">Select Your Target Grade</option>
+                                    <option value="allA" >All A's</option>
+                                    <option value="allB">All B's</option>
+                                    <option value="allC">All C's</option>
+                                </select>
+                                <label for="typeOfGrades">Show Minimum Grades for</label>
+                            </div>
+                        </div>
+                    </form>
+                    <a class="btn-large col s12 m12" id="clearAll">Clear All</a>
+                </div>
             </section>
             <footer data-role="footer">
-                
+
             </footer>
         </div>
-        
+
         <div data-role="page" id="newCourse">
-            <header data-role="header">
+            <header data-role="header" class="z-depth-2">
+                <a id="courseBack" href="#main"><img src="img/back.png"></a>
                 <h1>New Course</h1>
             </header>
             <section data-role="content">
-                <form id="addCourse">
-                    <p>Course Name</p><input type="text" name="courseName">
-                    <p>Period</p><input type="number" name="period">
-                    <p>Test Average</p><input type="number" step="0.01" name="testAvg">
-                    <p>Quiz Average</p><input type="number" step="0.01" name="quizAvg">
-                    <a href="#main" id="newCourseSubmit"><button>Add Course</button></a>
-                </form>
+                <div class="row">
+                    <form class="col s12 m12" id="addCourse">
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <input type="text" name="courseName" id="courseName">
+                                <label for="courseName">Course Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <input type="number" name="period" id="period">
+                                <label for="period">Period</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 m6">
+                                <input type="number" step="0.01" name="testAvg" id="testAvg">
+                                <label for="testAvg">Test Average</label>
+                            </div>
+                            <div class="col s6 m6">
+                                <input type="number" name="numTest" id="numTest">
+                                <label for="numTest">Number of Tests</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 m6">
+                                <input type="number" step="0.01" name="quizAvg" id="quizAvg">
+                                <label for="quizAvg">Quiz Average</label>
+                            </div>
+                            <div class="col s6 m6">
+                                <input type="number" name="numQuiz" id="numQuiz">
+                                <label for="numQuiz">Number of Tests</label>
+                            </div>
+                        </div>
+                        <a href="#main" id="newCourseSubmit"><button>Add Course</button></a>
+                    </form>
             </section>
             <footer data-role="footer">
-                
+
             </footer>
         </div>
-        
+
         <div data-role="page" id="newGrade">
-            <header data-role="header">
+            <header data-role="header" class="z-depth-2">
+                <a id="gradeBack" href="#main"><img src="img/back.png"></a>
                 <h1>New Grade</h1>
             </header>
             <section data-role="content">
-                <form>
-                    <select id="coursesToUpdate"></select>
-                    <p>Grade</p><input type="number" step="0.01" name="gradeInput">
-                    <button id="newTestGradeSubmit">Add Test</button>
-                    <button id="newQuizGradeSubmit">Add Quiz</button>
-                </form>
+                <div class="row">
+                    <form class="col s12 m12">
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <select id="coursesToUpdate" class="browser-default"></select>
+                                <label for="coursesToUpdate">Select Course</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m12">
+                                <p>Grade</p><input type="number" step="0.01" name="gradeInput" id="gradeInput">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col s6 m6">
+                            <a href="#main" id="newTestGradeSubmit"><button >Add Test</button></a>
+                        </div>
+                        <div class="col s6 m6">
+                            <a href="#main"><button id="newQuizGradeSubmit">Add Quiz</button></a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <footer data-role="footer">
-                
+
             </footer>
         </div>
         <script src="js/main.js"></script>
