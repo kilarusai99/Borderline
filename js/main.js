@@ -7,21 +7,12 @@ var globalStrUser;
 var neededGrade;
 
 function onDeviceReady() {
-    if (window.localStorage.length > 2)
-        refreshGrades();
-    else {
-        document.getElementById("userCourses").innerHTML =
-                "<div class=\"empty\">" +
-                "<i class=\"large material-icons\">dashboard</i>" +
-                "<p>Once you add a new course, your needed grades will appear here</p>" +
-                "</div>";
-    }
+    refreshGrades();
     document.getElementById("newCourseSubmit").onclick = function () {
         createNewCourse();
     };
     document.getElementById("clearAll").onclick = function () {
-        window.localStorage.clear();
-        refreshGrades();
+        clearCourses();
     };
     document.getElementById("newGradeButton").onclick = function () {
         refreshCourseNames();
@@ -109,22 +100,42 @@ function calculateNeededLetterGrade() {
 }
 
 function refreshGrades() {
-    var borderColors = ["#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#CDDC39","#FFEB3B", "#FFC107", "#FF9800", "#FF5722", "#607D8B"];
+    var borderColors = ["#F44336", "#E91E63", "#9C27B0", "#673AB7", "#3F51B5", "#2196F3", "#03A9F4", "#00BCD4", "#009688", "#4CAF50", "#8BC34A", "#CDDC39", "#FFEB3B", "#FFC107", "#FF9800", "#FF5722", "#607D8B"];
+    var length = window.localStorage.length / 9;
     text = "";
-    for (var i = 1; i < window.localStorage.length / 9; i += 1) {
-        if (i % 2 === 1)
-            text += "<div class=\"row\">";
-        text += "<div class=\"col s12 m6\"><div class=\"card course\" style=\"border-bottom: 3px solid " + borderColors[Math.floor(Math.random()*16)] + "\">" +
-                "<span class=\"black-text card-title\"><span class=\"truncate\">" + window.localStorage.getItem(i + "CourseName") + "</span></span>" +
-                "<div class=\"grades\"><p>Test: " + window.localStorage.getItem(i + "TargetTestGrade") + "</p>" +
-                "<p>Quiz: " + window.localStorage.getItem(i + "TargetQuizGrade") + "</p></div>" +
-                "</div></div>";
-        
+    var j = 1;
+    if (window.localStorage.length < 2) {
+        document.getElementById("userCourses").innerHTML =
+                "<div class=\"empty\">" +
+                "<i class=\"large material-icons\">dashboard</i>" +
+                "<p>Once you add a new course, your needed grades will appear here</p>" +
+                "</div>";
+    } else {
+        for (var i = 1; i < length; i += 1) {
+            console.log("refreshGrades " + i);
 
-        if (i % 2 === 1)
-            text += "</div>";
+            while (window.localStorage.getItem(j + "CourseName") === null && window.localStorage.length > 0)
+                j++;
+            if (i % 2 === 1)
+                text += "<div class=\"row\">";
+            text += "<div class=\"col s12 m6\"><div class=\"card course\" style=\"border-bottom: 3px solid " + borderColors[Math.floor(Math.random() * 16)] + "\">" +
+                    "<span class=\"black-text card-title\"><span class=\"truncate\">" + window.localStorage.getItem(j + "CourseName") + "</span></span>" +
+                    "<div class=\"grades\"><p>Test: " + window.localStorage.getItem(j + "TargetTestGrade") + "</p>" +
+                    "<p>Quiz: " + window.localStorage.getItem(j + "TargetQuizGrade") + "</p></div>" +
+                    "</div></div>";
+            if (i % 2 === 1)
+                text += "</div>";
+            j++;
+        }
+        document.getElementById("userCourses").innerHTML = text;
     }
-    document.getElementById("userCourses").innerHTML = text;
+}
+
+function clearCourses() {
+    if (confirm("Are you sure you want to delete all of your courses?") === true) {
+        window.localStorage.clear();
+        refreshGrades();
+    }
 }
 
 function refreshCourseNames() {
@@ -139,9 +150,9 @@ function submitTestGrade() {
     var testAvg;
     var k;
     for (var i = 1; i < window.localStorage.length + 1; i += 9) {
-        console.log("i"+i);
+        console.log("i" + i);
         for (var j = 1; j < (window.localStorage.length + 1) / 9; j++) {
-            console.log("j"+j);
+            console.log("j" + j);
             if (window.localStorage.getItem(j + "CourseName") === globalStrUser) {
                 testAvg = Number(window.localStorage.getItem(j + "TestAvg"));
                 k = Number(j);
@@ -149,19 +160,19 @@ function submitTestGrade() {
             }
         }
     }
-    console.log("k"+k);
+    console.log("k" + k);
     gradeInput = Number(document.getElementById("gradeInput").value);
     numTests = Number(window.localStorage.getItem(k + "NumTest")) + 1;
-    window.localStorage.setItem(k + "TestAvg", (testAvg * (numTests-1) + gradeInput) / numTests);
+    window.localStorage.setItem(k + "TestAvg", (testAvg * (numTests - 1) + gradeInput) / numTests);
     newTestAvg = window.localStorage.getItem(k + "TestAvg");
     window.localStorage.setItem(k + "NumTest", numTests);
     newNumTests = window.localStorage.getItem(k + "NumTest");
     quizAvg = window.localStorage.getItem(k + "QuizAvg");
     window.localStorage.setItem(k + "CourseAvg", newTestAvg * (testVal / 100.00) + quizAvg * (quizVal / 100.00));
-    
+
     calculateLowestTestGrade(k);
     calculateLowestQuizGrade(k);
-    
+
     refreshGrades();
 }
 
@@ -180,16 +191,16 @@ function submitQuizGrade() {
 
     gradeInput = Number(document.getElementById("gradeInput").value);
     numQuiz = Number(window.localStorage.getItem(k + "NumQuiz")) + 1;
-    window.localStorage.setItem(k + "QuizAvg", (quizAvg * (numQuiz-1) + gradeInput) / numQuiz);
+    window.localStorage.setItem(k + "QuizAvg", (quizAvg * (numQuiz - 1) + gradeInput) / numQuiz);
     newQuizAvg = window.localStorage.getItem(k + "QuizAvg");
     window.localStorage.setItem(k + "NumQuiz", numQuiz);
     newNumQuiz = window.localStorage.getItem(k + "NumQuiz");
     testAvg = window.localStorage.getItem(k + "TestAvg");
     window.localStorage.setItem(k + "CourseAvg", testAvg * (testVal / 100.00) + newQuizAvg * (quizVal / 100.00));
-    
+
     calculateLowestTestGrade(k);
     calculateLowestQuizGrade(k);
-     
+
 
     refreshGrades();
 }
