@@ -14,15 +14,30 @@
     width:100%;
 } 
 header a img{
-    height: 15px; 
+    height: 15px;
+}
+header a{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+header h4{
+    margin-left: 15px;
+    color: white;
 }
 header{
     border: none!important;
-    background-color: white;
+    background-color: #0091EA;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+#menuButton{
+    padding: 20px;
 }
 footer{
     border: 1px solid #e0e0e0;
-    background-color: white;
+    background-color: #0091EA;
 }
 #main{
     background-color: #EEEEEE;
@@ -50,4 +65,10 @@ footer{
 .card{
     border-bottom-style: solid;
     border-bottom-width: 3px;
+}
+.width100{
+    width: 100%;
+}
+#userCourses{
+    margin-top: 75px;
 }

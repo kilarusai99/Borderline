@@ -118,7 +118,7 @@ function refreshGrades() {
                 j++;
             if (i % 2 === 1)
                 text += "<div class=\"row\">";
-            text += "<div class=\"col s12 m6\"><div class=\"card course\" style=\"border-bottom: 3px solid " + borderColors[Math.floor(Math.random() * 16)] + "\">" +
+            text += "<div class=\"col s12 m6\"><div class=\"waves-effect waves-dark width100 card course\" style=\"border-bottom: 3px solid " + borderColors[Math.floor(Math.random() * 16)] + "\">" +
                     "<span class=\"black-text card-title\"><span class=\"truncate\">" + window.localStorage.getItem(j + "CourseName") + "</span></span>" +
                     "<div class=\"grades\"><p>Test: " + window.localStorage.getItem(j + "TargetTestGrade") + "</p>" +
                     "<p>Quiz: " + window.localStorage.getItem(j + "TargetQuizGrade") + "</p></div>" +

@@ -18,13 +18,14 @@
     </head>
     <body>
         <div data-role="page" id="main">
-            <header data-role="header" class="z-depth-2">
+            <header class="z-depth-2 width100">
+                <h4>Borderline</h4>
                 <a id="menuButton"><img src="img/menu.png"></a>
+                
                 <div class="collection" id="menuMenu">
                     <a href="#settings" class="collection-item">Settings</a>
                     <a href="#" class="collection-item">Edit Courses</a>
                 </div>
-                <h1>Borderline</h1>
             </header>
             <section data-role="content" id="mainContent">
                 <div id="userCourses">
@@ -40,7 +41,7 @@
                     </ul>
                 </div>
             </section>
-            <footer data-role="footer" class="page-footer white">
+            <footer data-role="footer" class="page-footer">
 
             </footer>
         </div>
@@ -66,17 +67,17 @@
                         </div>
                         <div class="row">
                             <div class="col s12">
+                                <label for="typeOfGrades">Show Minimum Grades for</label>
                                 <select id="typeOfGrades" class="browser-default">
                                     <option value="plsSelect">Select Your Target Grade</option>
                                     <option value="allA" >All A's</option>
                                     <option value="allB">All B's</option>
                                     <option value="allC">All C's</option>
                                 </select>
-                                <label for="typeOfGrades">Show Minimum Grades for</label>
                             </div>
                         </div>
                     </form>
-                    <a class="btn-large col s12 m12" id="clearAll">Clear All</a>
+                    <a class="waves-effect waves-light btn-large width100 col s12 m12" id="clearAll">Clear All</a>
                 </div>
             </section>
             <footer data-role="footer">
@@ -124,8 +125,9 @@
                                 <label for="numQuiz">Number of Quizzes</label>
                             </div>
                         </div>
-                        <a href="#main" id="newCourseSubmit"><button>Add Course</button></a>
+                        
                     </form>
+                    <a href="#main" id="newCourseSubmit" class="waves-effect waves-light btn-large width100">Add Course</a>
             </section>
             <footer data-role="footer">
 
@@ -142,8 +144,8 @@
                     <form class="col s12 m12">
                         <div class="row">
                             <div class="col s12 m12">
-                                <select id="coursesToUpdate" class="browser-default"></select>
                                 <label for="coursesToUpdate">Select Course</label>
+                                <select id="coursesToUpdate" class="browser-default"></select>
                             </div>
                         </div>
                         <div class="row">
@@ -154,10 +156,10 @@
                     </form>
                     <div class="row">
                         <div class="col s6 m6">
-                            <a href="#main" id="newTestGradeSubmit"><button >Add Test</button></a>
+                            <a href="#main" id="newTestGradeSubmit" class="waves-effect waves-light btn-large width100">Add Test</a>
                         </div>
                         <div class="col s6 m6">
-                            <a href="#main"><button id="newQuizGradeSubmit">Add Quiz</button></a>
+                            <a href="#main" id="newQuizGradeSubmit" class="waves-effect waves-light btn-large width100">Add Quiz</a>
                         </div>
                     </div>
                 </div>
