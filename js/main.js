@@ -111,7 +111,7 @@ function refreshGrades() {
                 "<p>Once you add a new course, your needed grades will appear here</p>" +
                 "</div>";
     } else {
-        for (var i = 1; i < length; i += 1) {
+        for (var i = 1; i <= length; i += 1) {
             console.log("refreshGrades " + i);
 
             while (window.localStorage.getItem(j + "CourseName") === null && window.localStorage.length > 0)
@@ -129,6 +129,7 @@ function refreshGrades() {
         }
         document.getElementById("userCourses").innerHTML = text;
     }
+    console.log("refresh");
 }
 
 function clearCourses() {

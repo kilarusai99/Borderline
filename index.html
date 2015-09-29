@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script src="js/jquery-2.1.4.min.js"></script>
+        <script>
+            $(document).bind('mobileinit', function () {
+                $.mobile.pushStateEnabled = false;
+            });
+        </script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
 
@@ -21,10 +26,9 @@
             <header class="z-depth-2 width100">
                 <h4>Borderline</h4>
                 <a id="menuButton"><img src="img/menu.png"></a>
-                
+
                 <div class="collection" id="menuMenu">
                     <a href="#settings" class="collection-item">Settings</a>
-                    <a href="#" class="collection-item">Edit Courses</a>
                 </div>
             </header>
             <section data-role="content" id="mainContent">
@@ -41,9 +45,6 @@
                     </ul>
                 </div>
             </section>
-            <footer data-role="footer" class="page-footer">
-
-            </footer>
         </div>
 
         <div data-role="page" id="settings">
@@ -125,7 +126,7 @@
                                 <label for="numQuiz">Number of Quizzes</label>
                             </div>
                         </div>
-                        
+
                     </form>
                     <a href="#main" id="newCourseSubmit" class="waves-effect waves-light btn-large width100">Add Course</a>
             </section>

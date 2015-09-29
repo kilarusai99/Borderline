@@ -14,16 +14,19 @@
     width:100%;
 } 
 header a img{
-    height: 15px;
+    height: 18px;
 }
-header a{
+header #menuButton{
     position: absolute;
     top: 0px;
     right: 0px;
+    width: 15px;
 }
 header h4{
-    margin-left: 15px;
+    position: relative;
+    margin: 18px;
     color: white;
+    font-size: 24px;
 }
 header{
     border: none!important;
@@ -31,9 +34,13 @@ header{
     position: absolute;
     top: 0px;
     right: 0px;
+    z-index: 99;
+    height: 56px;
 }
 #menuButton{
-    padding: 20px;
+    position: relative;
+    float: right;
+    margin: 18px;
 }
 footer{
     border: 1px solid #e0e0e0;
@@ -53,7 +60,7 @@ footer{
     display: none;
     position: absolute;
     top: 0px;
-    left: 0px;
+    right: 5px;
     z-index: 100;
 }
 .empty{
