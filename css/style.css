@@ -53,7 +53,7 @@
     width:100%;
 } 
 header a img{
-    height: 18px;
+    height: 20px;
 }
 header #menuButton{
     position: absolute;
@@ -89,12 +89,30 @@ footer{
     background-color: #EEEEEE;
 }
 .grades{
+    width: 35%;
     float: right;
+    min-height: 100px;
+    height: 100%;
+    color: white;
     padding: 15px;
+    font-size: 16px;
 }
-.course{
-    padding: 15px;
+.test{
+    padding-bottom: 15px;
 }
+.truncate{
+    display: inline;
+    padding: 15px 15px 0px 15px;
+    width: 60%;
+    float: left;
+}
+.period-display{
+    width: 60%;
+    float: left;
+    margin-left: 15px;
+    color: #9E9E9E;
+}
+
 #menuMenu{
     display: none;
     position: absolute;
@@ -109,14 +127,20 @@ footer{
     padding: 0 25%;
 }
 .card{
-    border-bottom-style: solid;
-    border-bottom-width: 3px;
+    /*border-right-style: solid;
+    border-right-width: 3px;*/
+    margin: 0px;
+    min-height: 100px;
+    clear: both;
+}
+#mainContent{
+    padding: 0;
 }
 .width100{
     width: 100%;
 }
 #userCourses{
-    margin-top: 75px;
+    margin-top: 56px;
 }
 
 

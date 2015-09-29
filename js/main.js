@@ -118,10 +118,11 @@ function refreshGrades() {
                 j++;
             /*if (i % 2 === 1)
                 text += "<div class=\"row\">";*/
-            text += "<div class=\"col s12 m6\"><div class=\"waves-effect waves-dark width100 card course\" style=\"border-bottom: 3px solid " + borderColors[Math.floor(Math.random() * 16)] + "\">" +
+            text += "<div class=\"col s12 m6\"><div class=\"waves-effect waves-dark width100 card course\">" +
                     "<span class=\"black-text card-title\"><span class=\"truncate\">" + window.localStorage.getItem(j + "CourseName") + "</span></span>" +
-                    "<div class=\"grades\"><p>Test: " + window.localStorage.getItem(j + "TargetTestGrade") + "</p>" +
-                    "<p>Quiz: " + window.localStorage.getItem(j + "TargetQuizGrade") + "</p></div>" +
+                    "<span class=\"period-display\">" + getPeriodString(j) + " period" + "</span>" +
+                    "<div class=\"grades\" style=\"background-color: " + borderColors[Math.floor(Math.random() * 16)] + "\"><p class=\"test\">Test: " + window.localStorage.getItem(j + "TargetTestGrade") + "</p>" +
+                    "<p class=\"quiz\">Quiz: " + window.localStorage.getItem(j + "TargetQuizGrade") + "</p></div>" +
                     "</div></div>";
             /*if (i % 2 === 1)
                 text += "</div>";*/
@@ -130,6 +131,16 @@ function refreshGrades() {
         document.getElementById("userCourses").innerHTML = text;
     }
     console.log("refresh");
+}
+function getPeriodString(period){
+    if(period === 1)
+        return "1st";
+    else if(period === 2)
+        return "2nd";
+    else if(period === 3)
+        return "3rd";
+    else
+        return period + "th";
 }
 
 function clearCourses() {
