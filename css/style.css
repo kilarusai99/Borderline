@@ -86,7 +86,7 @@ footer{
     background-color: #0091EA;
 }
 #main{
-    background-color: #EEEEEE;
+    background-color: #F5F5F5;
 }
 .grades{
     width: 35%;
@@ -121,10 +121,12 @@ footer{
     z-index: 100;
 }
 .empty{
-    margin: 25%;
+    width: 200px;
+    margin:  50% auto;
+    text-align: center;
 }
 .empty i{
-    padding: 0 25%;
+    margin: auto;
 }
 .card{
     /*border-right-style: solid;
