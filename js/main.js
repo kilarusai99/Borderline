@@ -116,12 +116,12 @@ function refreshGrades() {
 
             while (window.localStorage.getItem(j + "CourseName") === null && window.localStorage.length > 0)
                 j++;
-            text += "<div class=\"col s12 m6\"><div class=\"waves-effect waves-dark width100 card course\">" +
+            text += "<div class=\"waves-effect waves-dark card course\">" +
                     "<span class=\"black-text card-title\"><span class=\"truncate\">" + window.localStorage.getItem(j + "CourseName") + "</span></span>" +
                     "<span class=\"period-display\">" + getPeriodString(j) + " period" + "</span>" +
                     "<div class=\"grades\" style=\"background-color: " + borderColors[Math.floor(Math.random() * 16)] + "\"><p class=\"test\">Test: " + window.localStorage.getItem(j + "TargetTestGrade") + "</p>" +
                     "<p class=\"quiz\">Quiz: " + window.localStorage.getItem(j + "TargetQuizGrade") + "</p></div>" +
-                    "</div></div>";
+                    "</div>";
             j++;
         }
         document.getElementById("userCourses").innerHTML = text;
