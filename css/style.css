@@ -87,6 +87,7 @@ footer{
 }
 #main{
     background-color: #F5F5F5;
+    width: 100%;
 }
 .grades{
     width: 100%;
@@ -110,16 +111,19 @@ footer{
     padding-right: 15px;
 }
 .truncate{
-    display: inline;
+    display: block;
     padding: 15px 15px 0px 15px;
     width: 100%;
     float: left;
+    text-align: left;
 }
+
 .period-display{
     width: 60%;
     float: left;
     margin-left: 15px;
     color: #9E9E9E;
+    text-align: left;
 }
 #menuMenu{
     display: none;
@@ -141,13 +145,14 @@ footer{
     min-height: 100px;
     border-radius: 2px;
     clear: both;
-}
-.course{
-    width: 100%;
+    width: 97%;
+    display: inline-block;
 }
 #mainContent{
     padding: 0;
+    text-align: center;
 }
+
 .width100{
     width: 100%;
 }
