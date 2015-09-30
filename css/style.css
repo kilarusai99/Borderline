@@ -139,10 +139,9 @@ footer{
 .card{
     /*border-right-style: solid;
     border-right-width: 3px;*/
-    margin: 5px 0px 0px 0px;
+    margin: 5px;
     min-height: 100px;
     clear: both;
-    border-radius: 0px;
 }
 .course{
     width: 100%;
