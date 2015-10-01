@@ -113,6 +113,8 @@
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />-->
     <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-xhdpi" />
     <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-mhdpi" />
+    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-lhdpi" />
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
