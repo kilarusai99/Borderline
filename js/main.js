@@ -128,12 +128,12 @@ function refreshGrades() {
     }
     console.log("refresh");
 }
-function getPeriodString(period){
-    if(period === 1)
+function getPeriodString(period) {
+    if (period === 1)
         return "1st";
-    else if(period === 2)
+    else if (period === 2)
         return "2nd";
-    else if(period === 3)
+    else if (period === 3)
         return "3rd";
     else
         return period + "th";
