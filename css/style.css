@@ -161,6 +161,7 @@ footer{
     clear: both;
     width: 100%;
     display: inline-block;
+    box-shadow: none;
 }
 #mainContent{
     padding: 0;
@@ -173,6 +174,14 @@ footer{
 #userCourses{
     margin-top: 56px;
     margin-bottom: 104px;
+}
+.course hr{
+    margin: 0px 0px 0px 15px;
+    padding: 0;
+    border:0;
+    height: 1px;
+    width: 100%;
+    background-color: #BDBDBD;
 }
 
 

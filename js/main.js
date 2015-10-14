@@ -125,6 +125,7 @@ function refreshGrades() {
                     "<span class=\"period-display\">" + getPeriodString(j) + " period" + "</span>" +
                     "<div class=\"grades\" style=\"background-color: " + borderColors[Math.floor(Math.random() * 16)] + "\"><p class=\"test\">Test: " + Math.round(Number(window.localStorage.getItem(j + "TargetTestGrade"))) + "</p>" +
                     "<p class=\"quiz\">Quiz: " + Math.round(Number(window.localStorage.getItem(j + "TargetQuizGrade"))) + "</p></div>" +
+                    "<hr>"
                     "</div>";
             j++;
         }
@@ -141,29 +142,6 @@ function getPeriodString(period) {
         return "3rd";
     else
         return period + "th";
-}
-function preventError(){
-    var addCourse = document.getElementById("addCourse");
-    $(addCourse[1]).focusout(function(){
-        if(isNaN(addCourse[1].value))
-            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
-    });
-    addCourse[2].focusout(function(){
-        if(isNaN(addCourse[2].value))
-            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
-    });
-    addCourse[3].focusout(function(){
-        if(isNaN(addCourse[3].value))
-            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
-    });
-    addCourse[4].focusout(function(){
-        if(isNaN(addCourse[4].value))
-            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
-    });
-    addCourse[5].focusout(function(){
-        if(isNaN(addCourse[5].value))
-            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
-    });
 }
 function clearCourses() {
     if (confirm("Are you sure you want to delete all of your courses?") === true) {
