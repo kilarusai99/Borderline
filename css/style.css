@@ -103,12 +103,13 @@ footer{
     width: 100%;
 }
 .grades{
-    width: 100%;
+    width: 85%;
     display: block;
     color: white;
     padding: 15px;
     font-size: 16px;
-    margin-top: 100px;
+    margin: 100px auto 25px auto;
+    border-radius: 10px;
     min-height: 50px;
 }
 .test, .quiz{
@@ -154,11 +155,11 @@ footer{
     margin: auto;
 }
 .card{
-    margin: 5px;
+    margin: 0px;
     min-height: 100px;
-    border-radius: 2px;
+    border-radius: 0px;
     clear: both;
-    width: 97%;
+    width: 100%;
     display: inline-block;
 }
 #mainContent{

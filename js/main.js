@@ -8,6 +8,7 @@ var neededGrade;
 
 function onDeviceReady() {
     refreshGrades();
+    
     document.getElementById("newCourseSubmit").onclick = function () {
         createNewCourse();
     };
@@ -30,6 +31,9 @@ function onDeviceReady() {
         changeTarget();
     };
     document.getElementById("menuButton").onclick = showDropDown;
+    document.getElementById("newCourseButton").onclick = function(){
+        preventError();
+    };
 }
 
 function createNewCourse() {
@@ -40,7 +44,7 @@ function createNewCourse() {
     var numTest = addCourse[3].value;
     var quizAvg = addCourse[4].value;
     var numQuiz = addCourse[5].value;
-
+    
     window.localStorage.setItem(period + "CourseName", courseName);
     window.localStorage.setItem(period + "Period", period);
     window.localStorage.setItem(period + "TestAvg", testAvg);
@@ -138,7 +142,29 @@ function getPeriodString(period) {
     else
         return period + "th";
 }
-
+function preventError(){
+    var addCourse = document.getElementById("addCourse");
+    $(addCourse[1]).focusout(function(){
+        if(isNaN(addCourse[1].value))
+            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
+    });
+    addCourse[2].focusout(function(){
+        if(isNaN(addCourse[2].value))
+            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
+    });
+    addCourse[3].focusout(function(){
+        if(isNaN(addCourse[3].value))
+            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
+    });
+    addCourse[4].focusout(function(){
+        if(isNaN(addCourse[4].value))
+            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
+    });
+    addCourse[5].focusout(function(){
+        if(isNaN(addCourse[5].value))
+            document.getElementById("errorMessage").innerHTML = "You have entered a value that is not a number";
+    });
+}
 function clearCourses() {
     if (confirm("Are you sure you want to delete all of your courses?") === true) {
         window.localStorage.clear();
