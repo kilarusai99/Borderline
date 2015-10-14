@@ -98,7 +98,11 @@
     <icon src="res/icon/windows-phone/icon-48.png"  gap:platform="winphone" />
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />-->
     
-    <icon src="img/borderline-icon-logo.png" />
+    <icon src="img/borderline.png" />
+    <icon src="img/borderline.png" gap:platform="android" gap:qualifier="ldpi"/>
+    <icon src="img/borderline.png" gap:platform="android" gap:qualifier="mdpi"/>
+    <icon src="img/borderline.png" gap:platform="android" gap:qualifier="hdpi"/>
+    <icon src="img/borderline.png" gap:platform="android" gap:qualifier="xhdpi"/>
 
     <!-- Define app splash screen for each platform. -->
     <!--<gap:splash src="res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
@@ -113,10 +117,10 @@
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />-->
     
-    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-mhdpi" />
-    <gap:splash src="img/borderline-logo.png" gap:platform="android" gap:qualifier="port-lhdpi" />
+    <gap:splash src="img/borderline.png" gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="img/borderline.png" gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="img/borderline.png" gap:platform="android" gap:qualifier="port-mhdpi" />
+    <gap:splash src="img/borderline.png" gap:platform="android" gap:qualifier="port-lhdpi" />
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
